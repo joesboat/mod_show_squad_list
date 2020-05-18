@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension
+	type="module"
+	version="2.5"
+	client="site"
+	method="upgrade">
+	<name>Show Squadron List</name>
+	<author>Joseph P. Gibson</author>
+	<creationDate>March 2015</creationDate>
+	<copyright>Copyright (C) 2015 Joseph P. Gibson. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>jgibson@usps.org</authorEmail>
+	<version>1.0</version>
+	<authorUrl>www.joesboat.org</authorUrl>
+	<description>Module - mod_show_squad_list. Displays a list of squadrons for a district or state.  Each squadron name is displayed as a link to a page or web site where additional squadron details will be available. </description>
+	<files>
+		<filename module="mod_show_squad_list">mod_show_squad_list.php</filename>
+		<folder>tmpl</folder>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>		
+		<filename>mod_show_squad_list.xml</filename>
+	</files>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+			</fieldset>
+			<fieldset name="debug">
+                <field name="siteLog" type="text" size="1" label="Activate Logging" description="Set to 1(true) to activate logging in template routines."/>
+                <field name="siteDump" type="text" size="1" label="Activate JDump" description="Set to 1(true) to activate calling the extension 'JDump' routines."/>
+			</fieldset>
+			<fieldset
+				name="advanced">
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+
+				<field
+					name="moduleclass_sfx"
+					type="text"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+
+				<field
+					name="cache"
+					type="list"
+					default="1"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC">
+					<option
+						value="1">JGLOBAL_USE_GLOBAL</option>
+					<option
+						value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>
